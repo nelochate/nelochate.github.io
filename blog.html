@@ -49,14 +49,16 @@
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="scrolled?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':'bg-transparent'">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-      <a href="index.html" class="flex h-12 w-12 items-center justify-center rounded-md bg-zinc-950 p-1" aria-label="Nel Ochate home">
-        <img src="assets/logo.png" alt="Nel Ochate" class="h-full w-full object-contain">
+      <a href="index.html" class="flex h-12 w-12 items-center justify-center rounded-md p-1" aria-label="Nel Ochate home">
+        <img x-show="!dark" src="assets/logoday.png" alt="Nel Ochate" class="h-full w-full object-contain">
+        <img x-show="dark" src="assets/logonight.png" alt="Nel Ochate" class="h-full w-full object-contain">
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
         <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
         <li><a href="projects.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
         <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="blog.html" class="nav-link text-accent font-medium" style="--tw-text-opacity:1">Blog</a></li>
+        <li><a href="index.html#reviews" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Reviews</a></li>
+        <li><a href="blog.html" class="nav-link text-accent font-medium">Blog</a></li>
         <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
@@ -78,6 +80,7 @@
         <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
         <li><a href="projects.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Work</a></li>
         <li><a href="index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
+        <li><a href="index.html#reviews" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Reviews</a></li>
         <li><a href="blog.html" class="block text-accent font-medium">Blog</a></li>
         <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
       </ul>

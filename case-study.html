@@ -14,14 +14,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Novu — SaaS Dashboard redesign case study by nel. How a full UX overhaul reduced cognitive load by 40% and improved trial-to-paid conversion."/>
-  <meta name="author" content="nel"/>
-  <meta property="og:title" content="Novu — SaaS Dashboard · Case Study by nel"/>
+  <meta name="description" content="CloseShop — Location-Based E-Commerce Mobile Platform for MSMEs in Butuan City. Capstone project by Charles Q. Neri, Nel O. Ochate, and Queen Zalvy P. Israel."/>
+  <meta name="author" content="Neri, Ochate & Israel"/>
+  <meta property="og:title" content="CloseShop — Location-Based E-Commerce for MSMEs · Capstone Project"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:url" content="https://nelochate.github.io/case-study.html"/>
-  <link rel="canonical" href="https://nelochate.github.io/case-study.html"/>
-  <link rel="icon" type="image/png" href="assets/profile.png"/>
-  <title>Novu — SaaS Dashboard · Case Study — nel</title>
+  <link rel="canonical" href="https://example.com/closeshop-capstone.html"/>
+  <title>CloseShop — Location-Based E-Commerce for MSMEs · Capstone Project</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -33,7 +31,7 @@
       theme: {
         extend: {
           fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] },
-          colors: { accent: '#047857', 'accent-light': '#059669' }
+          colors: { accent: '#0D9488', 'accent-light': '#14B8A6' }
         }
       }
     }
@@ -42,7 +40,7 @@
     *,*::before,*::after{box-sizing:border-box;}
     html{font-family:'DM Sans',sans-serif;}
     h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif;}
-    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#047857;border-radius:99px;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#0D9488;border-radius:99px;}
     body{transition:background-color .3s,color .3s;}
     body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
     .nav-link{position:relative;}
@@ -54,64 +52,50 @@
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
     .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-
-    /* Reading progress */
-    .progress-bar{position:fixed;top:0;left:0;height:3px;background:#047857;z-index:100;transition:width .1s linear;}
-
-    /* Reveal */
+    .progress-bar{position:fixed;top:0;left:0;height:3px;background:#0D9488;z-index:100;transition:width .1s linear;}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1);}
     .reveal.visible{opacity:1;transform:translateY(0);}
     .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
-
-    /* Case study prose */
     .prose-cs h2{font-family:'PT Sans',sans-serif;font-size:1.55rem;font-weight:700;margin:2.75rem 0 1rem;line-height:1.25;}
-    .prose-cs h3{font-family:'PT Sans',sans-serif;font-size:1.15rem;font-weight:700;margin:2rem 0 .6rem;line-height:1.3;color:#047857;}
+    .prose-cs h3{font-family:'PT Sans',sans-serif;font-size:1.15rem;font-weight:700;margin:2rem 0 .6rem;line-height:1.3;color:#0D9488;}
     .prose-cs p{margin:0 0 1.4rem;line-height:1.82;color:#52525b;}
     .dark .prose-cs p{color:#a1a1aa;}
     .prose-cs ul{margin:0 0 1.4rem 1.5rem;list-style:disc;}
     .prose-cs li{margin-bottom:.45rem;line-height:1.7;color:#52525b;}
     .dark .prose-cs li{color:#a1a1aa;}
-    .prose-cs blockquote{border-left:3px solid #047857;padding:.75rem 1.25rem;margin:0 0 1.8rem;background:#ECFDF5;border-radius:0 8px 8px 0;}
+    .prose-cs blockquote{border-left:3px solid #0D9488;padding:.75rem 1.25rem;margin:0 0 1.8rem;background:#F0FDFA;border-radius:0 8px 8px 0;}
     .dark .prose-cs blockquote{background:#27272a;}
     .prose-cs blockquote p{color:#52525b;font-style:italic;margin:0;}
     .dark .prose-cs blockquote p{color:#a1a1aa;}
     .prose-cs hr{border:none;border-top:1px solid #e4e4e7;margin:2.5rem 0;}
     .dark .prose-cs hr{border-top-color:#27272a;}
-    .prose-cs a{color:#047857;text-decoration:underline;text-underline-offset:3px;}
-
-    /* Stat card */
-    .stat-card{border-left:3px solid #047857;}
-
-    /* Image caption */
+    .prose-cs a{color:#0D9488;text-decoration:underline;text-underline-offset:3px;}
+    .stat-card{border-left:3px solid #0D9488;}
     .img-caption{font-size:.8rem;color:#a1a1aa;text-align:center;margin-top:.6rem;}
-
-    /* Step badge */
-    .step-badge{width:2rem;height:2rem;min-width:2rem;border-radius:50%;background:#047857;color:#fff;font-family:'PT Sans',sans-serif;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
-    .bg-orange-50{background-color:#ECFDF5}.border-orange-200{border-color:#A7F3D0}
-
-    /* card hover */
+    .step-badge{width:2rem;height:2rem;min-width:2rem;border-radius:50%;background:#0D9488;color:#fff;font-family:'PT Sans',sans-serif;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
+    .bg-teal-50{background-color:#F0FDFA}.border-teal-200{border-color:#99F6E4}
     .card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s;}
     .card-h:hover{transform:translateY(-4px);}
   </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
 
-  <!-- Reading progress bar -->
   <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
 
   <!-- ═══ NAV ═══ -->
-  <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300"
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="scrolled ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5' : 'bg-transparent'">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-      <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
-        <span class="text-zinc-900 dark:text-white">eli</span><span class="text-accent">ott</span>
+      <a href="index.html" class="relative z-10 flex h-12 w-12 items-center justify-center rounded-md p-1" aria-label="Nel Ochate home">
+        <img x-show="!dark" src="assets/logoday.png" alt="Nel Ochate" class="h-full w-full object-contain">
+        <img x-show="dark" src="assets/logonight.png" alt="Nel Ochate" class="h-full w-full object-contain">
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
-        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
-        <li><a href="projects.html" class="nav-link text-accent font-medium">Work</a></li>
-        <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="blog.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+        <li><a href="#overview" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Overview</a></li>
+        <li><a href="#research" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Research</a></li>
+        <li><a href="#design" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Design</a></li>
+        <li><a href="#results" class="nav-link text-accent font-medium">Results</a></li>
+        <li><a href="#team" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Team</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark"
@@ -120,25 +104,8 @@
           <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
           <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
         </button>
-        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Hire me →</a>
-        <button @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle menu">
-          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
       </div>
     </nav>
-    <div x-show="mobileMenu" x-cloak
-      x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
-      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
-      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
-        <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
-        <li><a href="projects.html" @click="mobileMenu=false" class="block text-accent font-medium">Work</a></li>
-        <li><a href="index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="blog.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Blog</a></li>
-        <li><a href="index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
-      </ul>
-    </div>
   </header>
 
   <main>
@@ -147,45 +114,42 @@
     <article>
       <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
 
-        <!-- Back link -->
-        <a href="projects.html" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+        <a href="/index.html#work" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
-          Back to projects
+          Back
         </a>
 
-        <!-- Tags + date -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">SaaS</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Figma</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Tailwind</span>
-          <span class="text-xs text-zinc-400 ml-1">2025 · 6 weeks</span>
+          <span class="text-xs bg-teal-50 dark:bg-zinc-800 text-accent border border-teal-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">E-Commerce</span>
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Mobile App</span>
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Vue.js</span>
+          <span class="text-xs text-zinc-400 ml-1">2025 · 6 Months</span>
         </div>
 
         <h1 class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
-          Novu — SaaS Dashboard Redesign
+          CloseShop — Location-Based E-Commerce for MSMEs
         </h1>
 
         <p class="reveal d1 text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-          A complete UX and UI overhaul of a B2B notification management platform — reducing cognitive load, streamlining the core workflow, and converting more trial users into paying customers.
+          A location-based mobile platform designed to connect Micro, Small, and Medium Enterprises (MSMEs) in Butuan City with nearby consumers — reducing delivery delays, increasing local visibility, and fostering community-based commerce.
         </p>
 
-        <!-- Meta row -->
         <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Novu Inc.</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">MSMEs of Butuan City</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Role</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Lead UI/UX Designer</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Capstone Project Team</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Timeline</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Jan – Feb 2025</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Sep 2025 – Feb 2026</p>
           </div>
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Deliverables</p>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Figma, HTML/CSS</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Android APK, Figma</p>
           </div>
         </div>
       </header>
@@ -193,7 +157,7 @@
       <!-- ═══ HERO IMAGE ═══ -->
       <div class="max-w-6xl mx-auto px-6 mb-16">
         <div class="reveal photo-frame w-full h-72 md:h-[480px] rounded-3xl">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1400&q=80" alt="Novu — SaaS Dashboard redesign hero" loading="eager"/>
+          <img src="assets/thumbnail1.png" alt="CloseShop — Location-Based E-Commerce Platform" loading="eager"/>
         </div>
       </div>
 
@@ -201,20 +165,20 @@
       <div class="max-w-4xl mx-auto px-6 mb-16">
         <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">−40%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Cognitive load (SUS score)</p>
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">82.85</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">SUS Score (Excellent)</p>
           </div>
           <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-accent">+27%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Trial-to-paid conversion</p>
+            <p class="font-display font-bold text-3xl text-accent">4.41</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Performance Expectancy</p>
           </div>
           <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">−35%</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Support tickets (onboarding)</p>
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">4.36</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Effort Expectancy</p>
           </div>
           <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">4.8/5</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Post-launch NPS</p>
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">110</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Survey Respondents</p>
           </div>
         </div>
       </div>
@@ -222,241 +186,212 @@
       <!-- ═══ ARTICLE BODY ═══ -->
       <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
 
-        <h2>The brief</h2>
-        <p>Novu is a B2B notification infrastructure platform — it lets developers route, manage, and monitor notifications across email, SMS, push, and in-app channels. The product was technically solid, but the dashboard had grown organically over two years without a coherent design strategy. By early 2025, the team were seeing high churn in the 14-day trial window and receiving consistent feedback that the platform was "powerful but overwhelming."</p>
-        <p>My mandate was simple: fix the first-hour experience without rebuilding the product from scratch. The budget was fixed and the engineering team had six weeks to ship.</p>
+        <h2 id="overview">Background of the Study</h2>
+        <p>Micro, Small, and Medium Enterprises (MSMEs) serve as the backbone of the Philippine economy, contributing significantly to employment, local production, and overall economic activity. In Butuan City, MSMEs play a vital role in sustaining local communities and fostering regional development across retail, food services, trade, and small-scale manufacturing.</p>
+        <p>Despite their economic importance, many MSMEs face significant challenges in transitioning to digital commerce. Limited financial resources, technological constraints, low digital literacy, and insufficient scalable infrastructure create barriers to adoption. While large enterprises have successfully implemented digital solutions, many MSMEs struggle to compete in visibility, logistics, and consumer outreach.</p>
 
         <blockquote>
           <p>"We're losing users in the first 20 minutes. They sign up, see the dashboard, and just bounce. The product does exactly what they need — they just can't find it."</p>
         </blockquote>
 
-        <h2>Discovery & research</h2>
-        <h3>User interviews</h3>
-        <p>I ran 9 user interviews with a mix of current paying customers and recently churned trial users. The sessions were 45-minute moderated usability tests combined with post-task interviews. Key findings:</p>
+        <h2 id="research">Statement of the Problem</h2>
+        <p>In Butuan City, MSMEs have played an important role in the growth of the local economy and the expansion of employment opportunities. Despite the availability of existing e-commerce platforms like Shopee, Lazada, and Facebook Marketplace, local MSMEs still struggle to engage effectively in e-commerce. These platforms are primarily geared toward servicing national markets rather than localized community markets, causing inefficiencies in deliveries and direct community interactions.</p>
+        <p>This study addresses the following key challenges:</p>
         <ul>
-          <li>7 of 9 users couldn't locate the "Workflows" section without help during their first session</li>
-          <li>The notification log and the analytics panel were confused for one another by 5 users</li>
-          <li>The sidebar had 14 top-level navigation items — users reported feeling "unsure where to start"</li>
-          <li>Trial users specifically wanted a "get your first notification live" path, not a feature overview</li>
+          <li><strong>Limited online visibility:</strong> Local MSMEs face challenges in accessing nearby customers due to market saturation with competing sellers.</li>
+          <li><strong>No dedicated platform:</strong> Consumers lack a platform for efficient discovery, browsing, and buying from local stores in Butuan City.</li>
+          <li><strong>Complex interfaces:</strong> Existing platforms may be difficult for some MSMEs to use due to complex technological procedures.</li>
+          <li><strong>Trust and location-based needs:</strong> Consumers require a more trustworthy, location-based purchasing experience with transparency and accessible product information.</li>
         </ul>
 
-        <h3>Heuristic audit</h3>
-        <p>I ran a full Nielsen heuristic evaluation of the existing interface and identified 23 violations across 6 categories. The most critical were around visibility of system status, recognition over recall, and error prevention in the workflow builder.</p>
+        <h2>Objectives of the Study</h2>
+        <ul>
+          <li>To develop a functional e-commerce mobile platform that allows MSMEs to register stores and manage product listings effectively.</li>
+          <li>To integrate location-based features through a map interface that enables users to locate and access local stores, improving convenience and accessibility.</li>
+          <li>To assess the usability of the system using the System Usability Scale (SUS).</li>
+          <li>To evaluate user acceptance through the Unified Theory of Acceptance and Use of Technology (UTAUT).</li>
+        </ul>
 
       </div>
 
-      <!-- Full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=1200&q=80" alt="Existing dashboard audit — heuristic violations mapped" loading="lazy"/>
+      <!-- Framework Cards -->
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="reveal grid md:grid-cols-2 gap-5">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+            <div class="w-10 h-10 bg-teal-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">UTAUT Framework</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Performance Expectancy (4.41), Effort Expectancy (4.36), Social Influence (4.28), Facilitating Conditions (4.25) — all rated "Good" by respondents.</p>
+          </div>
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+            <div class="w-10 h-10 bg-teal-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">SUS Evaluation</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Mean SUS score of 82.85 — "Excellent" usability classification. Positive scores across ease of use (4.27), learnability (4.25), and confidence (4.35).</p>
+          </div>
         </div>
-        <p class="img-caption">Existing dashboard with heuristic violations annotated during the audit phase.</p>
       </div>
 
       <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
 
-        <h2>Design strategy</h2>
-        <p>Based on the research, I built the redesign around three principles:</p>
+        <h2 id="design">System Development</h2>
+        <h3>Agile Methodology</h3>
+        <p>CloseShop was developed using the Agile Software Development Life Cycle (SDLC) methodology, consisting of six phases: Plan, Design, Develop, Test, Deploy, and Review. This iterative approach allowed for continuous feedback, stakeholder collaboration, and rapid adaptation to changing requirements.</p>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Frontend:</strong> Vue.js 3 with Vuetify — component-based architecture with Material Design components</li>
+          <li><strong>Backend:</strong> Supabase (BaaS) — PostgreSQL database, authentication, and file storage</li>
+          <li><strong>Mapping:</strong> Mapbox — geolocation, store discovery, route navigation</li>
+          <li><strong>Mobile:</strong> Capacitor + Android Studio — APK generation for Android deployment</li>
+          <li><strong>Notifications:</strong> Firebase Cloud Messaging — real-time order updates</li>
+        </ul>
 
       </div>
 
-      <!-- 3-column principles -->
+      <!-- Full-width image - System Architecture -->
+      <div class="max-w-5x5 mx-auto px-12 mb-6">
+        <div>
+          <img src="assets/system architecture.png" alt="CloseShop System Architecture" loading="lazy"/>
+        </div>
+        <p class="img-caption">System architecture diagram showing client-server design with Vue.js frontend, Supabase backend, and Mapbox integration.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Key Features</h2>
+        <h3>Store Registration & Product Management</h3>
+        <p>Business owners can easily register their stores, create detailed product listings with descriptions, images, pricing, and availability variations. The platform provides a streamlined interface for managing inventory and customer interactions.</p>
+
+        <h3>Location-Based Discovery</h3>
+        <p>Users can discover stores in their vicinity through an interactive Mapbox interface with distance information and navigation support. The map display shows nearby shops by proximity, making it easy to find and access local businesses.</p>
+
+        <h3>Shopping Cart & Order Management</h3>
+        <p>Consumers can add items to their cart, modify quantities, and complete transactions. Sellers receive real-time notifications and can accept or reject orders. Riders can accept delivery requests, view addresses on a map, and update delivery status.</p>
+
+      </div>
+
+      <!-- Feature Cards -->
       <div class="max-w-5xl mx-auto px-6 mb-12">
         <div class="reveal grid md:grid-cols-3 gap-5">
           <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <div class="w-10 h-10 bg-teal-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
             </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Progressive disclosure</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Show only what's needed for the current task. Advanced features revealed on demand, not upfront.</p>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Store Registration</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">MSME owners can register shops, submit business details, and get admin approval before going live.</p>
           </div>
           <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+            <div class="w-10 h-10 bg-teal-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Opinionated navigation</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Reduce the sidebar to 6 core items. Group secondary actions in context panels rather than global nav.</p>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Map-Based Navigation</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Interactive maps show nearby stores, route directions, and distance information for easy navigation.</p>
           </div>
           <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            <div class="w-10 h-10 bg-teal-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Goal-first onboarding</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Replace the feature tour with a 3-step "send your first notification" flow that delivers an aha-moment in under 5 minutes.</p>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Cart & Checkout</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Seamless shopping experience with cart management, order tracking, and real-time delivery updates.</p>
           </div>
         </div>
       </div>
 
+      <!-- Results section -->
       <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
 
-        <h2>Process</h2>
-        <h3>Week 1–2 · Information architecture</h3>
-        <p>I ran a card sorting exercise with 12 participants to rebuild the navigation taxonomy from scratch. The 14-item sidebar collapsed to 6 primary destinations. I then produced low-fidelity wireframes in Figma for the 8 most-visited screens, running rapid async reviews with the product team using Loom walkthroughs.</p>
-
-      </div>
-
-      <!-- Process steps -->
-      <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div class="reveal space-y-4">
-          <!-- Step -->
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">1</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Card sorting + IA rebuild</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Remote card sort with 12 participants via Optimal Workshop. 14 nav items → 6 clear destinations with zero ambiguous groupings.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">2</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Lo-fi wireframes & async review</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">8 key screens sketched in Figma wireframe mode. Async review via Loom with the product team — 3 iteration rounds over 4 days.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">3</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Hi-fi design & component library</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Full Figma component library built on Auto Layout. 40+ components covering all states (empty, loading, error). Dark mode tokens included.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">4</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Usability testing & iteration</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">5 moderated sessions on the hi-fi prototype. 2 significant UX issues surfaced and resolved before handoff. SUS score improved from 54 → 82.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">5</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Handoff & front-end support</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Zeroheight design doc + Tailwind CSS implementation of the new design tokens. Present during sprint to support the engineering team on edge cases.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Second full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="High-fidelity Figma screens — new dashboard layout" loading="lazy"/>
-        </div>
-        <p class="img-caption">Final hi-fi screens showing the redesigned sidebar, dashboard home, and notification workflow builder.</p>
-      </div>
-
-      <!-- Before / After split -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-2 gap-4">
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=700&q=80" alt="Before — original dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">Before — 14-item sidebar, no clear entry point</p>
-          </div>
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="After — redesigned dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">After — 6-item sidebar, goal-first onboarding checklist</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
-
-        <h2>Key design decisions</h2>
-        <h3>Collapsing the sidebar</h3>
-        <p>The original sidebar mixed primary destinations with contextual actions and account settings indiscriminately. I applied a strict three-tier hierarchy: primary navigation (6 items, always visible), contextual actions (appear in a right panel when relevant), and account/settings (collapsed under an avatar menu). This alone reduced the cognitive entry cost significantly — users knew where they were and where they could go.</p>
-
-        <h3>The onboarding checklist</h3>
-        <p>Rather than a product tour, I designed a persistent but dismissible checklist embedded in the dashboard home. Three steps: connect a channel, create a workflow, send a test notification. Each step launches an inline mini-wizard that completes within the dashboard without breaking context. In the first month post-launch, 68% of trial users completed all three steps vs 21% previously.</p>
-
-        <h3>Empty states as teachers</h3>
-        <p>Every empty state in the old design was a blank panel. In the redesign, each empty state includes a one-sentence explanation of what the section does, a primary CTA, and a secondary link to documentation. This reduced support tickets specifically about feature discovery by 35%.</p>
-
-        <h2>Results</h2>
-        <p>The redesign shipped in week 6, exactly on schedule. Metrics were tracked over the following 6 weeks post-launch compared to the same prior period.</p>
+        <h2 id="results">Results & Evaluation</h2>
+        <h3>System Usability Scale (SUS)</h3>
+        <p>A total of 110 respondents participated in the SUS evaluation. The platform achieved a mean SUS score of 82.85, which falls within the "Excellent" usability classification. Key findings include:</p>
         <ul>
-          <li><strong>SUS (System Usability Scale) score:</strong> 54 → 82 (+28 points)</li>
-          <li><strong>Trial-to-paid conversion rate:</strong> +27%</li>
-          <li><strong>Onboarding completion (3-step flow):</strong> 21% → 68%</li>
-          <li><strong>Support tickets (onboarding-related):</strong> −35%</li>
-          <li><strong>Average time to first workflow created:</strong> 18 min → 4 min</li>
-          <li><strong>Post-launch NPS:</strong> 4.8/5</li>
+          <li><strong>Ease of Use (Item 3):</strong> 4.27/5 — Users found the system intuitive and easy to navigate</li>
+          <li><strong>Learnability (Item 7):</strong> 4.25/5 — Most users would learn the system quickly</li>
+          <li><strong>User Confidence (Item 9):</strong> 4.35/5 — Users felt confident using the platform</li>
+          <li><strong>Integration (Item 5):</strong> 4.15/5 — Functions were well integrated</li>
+        </ul>
+        <p>The SUS score distribution shows 41 respondents rated the system as "Excellent," 35 as "Good," 27 as "OK," and 4 as "Poor," indicating strong overall usability with room for improvement for a minority of users.</p>
+
+        <h3>UTAUT Evaluation</h3>
+        <p>Using the Unified Theory of Acceptance and Use of Technology framework with 104 respondents, all constructs received "Good" ratings:</p>
+        <ul>
+          <li><strong>Performance Expectancy:</strong> 4.41 — Users believe CloseShop improves their shopping/selling experience</li>
+          <li><strong>Effort Expectancy:</strong> 4.36 — The platform is easy to learn and use</li>
+          <li><strong>Social Influence:</strong> 4.28 — Positive recommendations and community support drive adoption</li>
+          <li><strong>Facilitating Conditions:</strong> 4.25 — Adequate resources and technical capability exist for use</li>
         </ul>
 
         <blockquote>
-          <p>"nel completely changed how we think about our onboarding. The checklist alone added 6 figures to our ARR in the first quarter. Exceptionally thorough process and a pleasure to work with."</p>
+          <p>"CloseShop has made a significant improvement in the visibility of local shops and transactions while also having a high level of user acceptance. The platform is perceived as useful, easy to use, having strong social influence, and facilitating conditions."</p>
         </blockquote>
 
-        <h2>Reflections</h2>
-        <p>The biggest lesson from this project: most SaaS UX problems aren't about aesthetics, they're about information architecture. The product was capable — users just couldn't find the value fast enough. A focused IA overhaul delivered more measurable ROI than a visual rebrand ever could have.</p>
-        <p>If I were to do it again, I'd push harder for a longer discovery phase. Six weeks is tight for a full dashboard redesign, and we had to make some navigation decisions based on incomplete card-sort data. The results held up, but another round of testing before hi-fi would have given me more confidence on a few borderline calls.</p>
+        <h2>Demographic Profile</h2>
+        <p>The study engaged 104 respondents with diverse backgrounds:</p>
+        <ul>
+          <li><strong>Age:</strong> 52.9% (18-25), 22.1% (26-35), 20.2% (36-45), 4.8% (46+)</li>
+          <li><strong>Gender:</strong> 55.8% Female, 44.2% Male</li>
+          <li><strong>Role:</strong> 44.2% Customers/Users, 31.7% MSME Owners, 24.0% Employees</li>
+          <li><strong>Usage Frequency:</strong> 43.3% Weekly, 30.8% Occasionally, 23.1% Daily</li>
+        </ul>
+
+        <h2>Recommendations</h2>
+        <ul>
+          <li><strong>For developers:</strong> Include interactive tutorials, step-by-step walkthroughs, and on-screen guidance to help novice users</li>
+          <li><strong>For platform improvement:</strong> Simplify the interface and streamline features that may confuse non-technical users</li>
+          <li><strong>For users:</strong> Provide feedback on system operation and ease of use to help refine the platform</li>
+          <li><strong>For admins:</strong> Review user feedback and usability statistics regularly; make incremental updates as needed</li>
+          <li><strong>For future studies:</strong> Conduct usability tests with larger and more diversified samples for long-term insights</li>
+        </ul>
 
         <hr/>
-        <p><em>Interested in a similar engagement? <a href="index.html#contact">Get in touch</a> — I'm available for new projects from Q2 2025.</em></p>
+        <p><em>This capstone project was submitted to the Department of Information Systems, College of Computing and Information Sciences, Caraga State University — Main Campus, in partial fulfillment of the requirements for the degree Bachelor of Science in Information System (BSIS).</em></p>
 
       </div>
     </article>
 
-    <!-- ═══ MORE PROJECTS ═══ -->
-    <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
+    <!-- ═══ TEAM SECTION ═══ -->
+    <section id="team" class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center justify-between mb-8">
-          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
-          <a href="projects.html" class="text-sm font-medium text-accent nav-link hidden md:block">View all →</a>
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">The Team</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
 
           <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Finlo — Fintech App" loading="lazy"/>
+              <img src="assets/charles.png" alt="Charles Q. Neri" loading="lazy"/>
             </div>
             <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Landing page</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Finlo — Fintech App</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-1">Charles Q. Neri</h3>
+              <p class="text-sm text-accent font-medium">Project Manager & Developer</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Team leader and bridge between the group, project adviser, and stakeholders. Proficient in SQL, Vue.js, and Supabase.</p>
             </div>
           </article>
 
           <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80" alt="Orea — Creative Agency" loading="lazy"/>
+              <img src="assets/ID 2x2 tuxedo.jpeg" alt="Nel O. Ochate" loading="lazy"/>
             </div>
             <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Agency</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Orea — Creative Agency</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-1">Nel O. Ochate</h3>
+              <p class="text-sm text-accent font-medium">Lead Developer & Tester</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Responsible for front-end and back-end development, functional testing, and system integration. Background in Software Engineering and AI.</p>
             </div>
           </article>
 
           <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80" alt="Bloom — E-commerce" loading="lazy"/>
+              <img src="assets/sabol.jpg" alt="Queen Zalvy P. Israel" loading="lazy"/>
             </div>
             <div class="p-5">
-              <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
-              </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Bloom — E-commerce</h3>
-              </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+              <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white mb-1">Queen Zalvy P. Israel</h3>
+              <p class="text-sm text-accent font-medium">Documentation Lead & UI/UX Designer</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Creates user-friendly interfaces, wireframes, and mockups using Figma. Experienced in HCI and Database Management.</p>
             </div>
           </article>
 
-        </div>
-        <div class="text-center mt-8 md:hidden">
-          <a href="projects.html" class="text-sm font-medium text-accent">View all projects →</a>
         </div>
       </div>
     </section>
@@ -468,12 +403,14 @@
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
           <div class="relative z-10">
-            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Ready to start?</p>
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Got a similar project?</h2>
-            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for new projects. Tell me about what you're building and let's see if we're a good fit.</p>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
-              Start a project →
-            </a>
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Capstone Project</p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Empowering Local MSMEs Through Digital Commerce</h2>
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">CloseShop represents a step toward inclusive digital transformation for MSMEs in Butuan City.</p>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <a href="https://closeshop-webpage.vercel.app/" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+                View our webpage →
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -483,7 +420,7 @@
 
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">© <span id="yr"></span> nel. All rights reserved. <br> Developed by <a href="https://lbegey78.gumroad.com/" rel="noopener noreferrer" target="_blank" class="font-bold">Laurent Begey</a> • Distributed by <a href="https://themewagon.com/" rel="noopener noreferrer" target="_blank" class="font-bold">ThemeWagon</a></p>
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Neri, Ochate & Israel. All rights reserved. <br> Caraga State University — Main Campus</p>
       <p class="text-xs text-zinc-500">Built with <a href="https://tailwindcss.com" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Tailwind CSS</a> &amp; <a href="https://alpinejs.dev" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Alpine.js</a></p>
     </div>
   </footer>
@@ -491,7 +428,6 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Reveal on scroll
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
